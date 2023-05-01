@@ -5,6 +5,8 @@ import { model } from "./src/model.js";
 const app = express();
 app.use(express.json());
 
+app.use("/src", express.static("./src"));
+
 app.get("/", (req, res) => res.send(generateHTML(model)));
 
 app.post("/api/todo-items", (req, res) => {
